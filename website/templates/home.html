@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit Search Engine</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css')}}"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="nav-title">
+          <a href="/">Reddit Search</a>
+        </div>
+      </div>
+    </nav>
+    <div class="search-container">
+      <form method="POST">
+        <input
+          type="text"
+          name="query"
+          id="query"
+          class="search-box"
+          placeholder="Search Reddit..."
+        />
+        <select name="sort_by" id="sort_by" class="sort-by-toggle">
+          <option value="relevance">Relevance</option>
+          <option value="upvotes">Upvotes</option>
+          <option value="popularity">Popularity</option>
+        </select>
+        <button type="submit" class="search-button">Search</button>
+      </form>
+    </div>
+  </body>
+</html>

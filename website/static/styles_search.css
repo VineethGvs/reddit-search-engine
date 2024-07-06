@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f6f6f6;
+}
+
+nav {
+  background-color: #ff4500;
+  padding: 1rem;
+  color: white;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-title a:hover {
+  color: rgb(0, 0, 0);
+}
+
+.nav-search {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.search-box {
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ff4500;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: #ff4500;
+  box-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
+}
+
+.search-button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #ff4500;
+  background-color: white;
+  border: 2px solid #ff4500;
+  border-left: none;
+  border-left: solid black;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #e03e00;
+  color: black;
+}
+
+.search-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
+}
+
+.results-container {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.results-container h2 {
+  color: #333;
+}
+
+.result-item {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.result-item h3 {
+  margin: 0 0 0.5rem;
+}
+
+.result-item h3 a {
+  color: #ff4500;
+  text-decoration: none;
+}
+
+.result-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.result-item p {
+  margin: 0;
+  color: #666;
+}
+
+.result-score {
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0 5px 0;
+}
+
+
+.sort-by-toggle {
+  padding: 0.25rem;
+  font-size: 1rem;
+  /* border: 2px solid #ff4500; */
+  /* border-radius: 5px; */
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+}
+
+.sort-by-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
+}
+
+.sort-by-toggle option {
+  font-size: 1rem;
+}

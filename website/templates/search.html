@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit Search Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles_search.css')}}"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="nav-title">
+          <a href="/">Reddit Search</a>
+        </div>
+        <form action="/" method="POST" class="nav-search">
+          <input
+            type="text"
+            name="query"
+            class="search-box"
+            placeholder="Search Reddit..."
+          />
+          <select name="sort_by" id="sort_by" class="sort-by-toggle">
+            <option value="relevance">Relevance</option>
+            <option value="upvotes">Upvotes</option>
+            <option value="popularity">Popularity</option>
+          </select>
+          <button type="submit" class="search-button">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="results-container">
+      <h2>Showing results for: "{{ query }}"</h2>
+      {% for result in results %}
+      <div class="result-item">
+        <h3>
+          <a href="{{ result.URL }}" target="_blank">{{ result.Title }}</a>
+        </h3>
+        <div class="result-score">
+          Score: {{ "%.2f"|format(result.Score_Match) }}
+        </div>
+        <div class="result-score">
+          Upvotes: {{ result.Upvotes }}
+        </div>
+        <!-- <div class="result-score">
+          Relevance Score: {{ "%.2f"|format(result.relevance_score) }}
+        </div> -->
+        <p>{{ result.Selftext }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
